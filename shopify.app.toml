@@ -1,0 +1,45 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f3e34f65b2d12ca440507e09aa6ad160"
+name = "Smart Discounts"
+handle = "SmartDiscounts"
+application_url = "https://alliance-limiting-agency-netherlands.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "abhimanyu-propero.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "customer_read_customers,customer_read_orders,customer_write_customers,read_assigned_fulfillment_orders,read_discounts,read_inventory,read_merchant_managed_fulfillment_orders,read_orders,read_products,read_purchase_options,read_third_party_fulfillment_orders,unauthenticated_read_customers,unauthenticated_write_customers,write_discounts,write_products,write_purchase_options,write_recurring_application_charges"
+
+[auth]
+redirect_urls = [
+  "https://alliance-limiting-agency-netherlands.trycloudflare.com/auth/callback",
+  "https://alliance-limiting-agency-netherlands.trycloudflare.com/auth/shopify/callback",
+  "https://alliance-limiting-agency-netherlands.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  uri = "/webhook/customers_data_request"
+  compliance_topics = [ "customers/data_request" ]
+
+  [[webhooks.subscriptions]]
+  uri = "/webhook/customers_redact"
+  compliance_topics = [ "customers/redact" ]
+
+  [[webhooks.subscriptions]]
+  uri = "/webhook/shop_redact"
+  compliance_topics = [ "shop/redact" ]
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhook/app_uninstalled"
+
+[pos]
+embedded = false

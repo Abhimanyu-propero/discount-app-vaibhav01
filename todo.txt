@@ -1,0 +1,10 @@
+--------------------- Added by Suyash ----------------------------
+1. Dashboard - dynamic campaign wise analysis and CSS   ----------------(dynamic campaign wise analysis Done)
+2. Buy X get Y collection mutation
+3. Buy X get Y mutation for unit/line items
+4. Buy X get Y visual panel (margin table and chart data)
+5. Settings and Pricing page
+6. Display AOV in edit campaign
+7. Set example for buy X get Y   ----------------------------Done
+8. Pre-select product(s) in resourcePicker (collection working)
+9. Check /app/routes/app.dashboard.jsx (remove when not needed)
